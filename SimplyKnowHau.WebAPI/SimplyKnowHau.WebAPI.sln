@@ -5,6 +5,12 @@ VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyKnowHau.WebAPI", "SimplyKnowHau.WebAPI.csproj", "{FBB85A11-98CF-4663-92C7-AC410BF552E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyKnowHau.Application", "..\SimplyKnowHau.Application\SimplyKnowHau.Application.csproj", "{BD08160F-779C-4F5F-8D38-0157C1646EA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyKnowHau.Domain", "..\SimplyKnowHau.Domain\SimplyKnowHau.Domain.csproj", "{C6674E6F-0E69-4CCB-8B32-BBAE06D6D8E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyKnowHau.Infrastructure", "..\SimplyKnowHau.Infrastructure\SimplyKnowHau.Infrastructure.csproj", "{FC4D877C-1727-4A1C-89E2-4657BD057491}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{FBB85A11-98CF-4663-92C7-AC410BF552E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBB85A11-98CF-4663-92C7-AC410BF552E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBB85A11-98CF-4663-92C7-AC410BF552E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD08160F-779C-4F5F-8D38-0157C1646EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD08160F-779C-4F5F-8D38-0157C1646EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD08160F-779C-4F5F-8D38-0157C1646EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD08160F-779C-4F5F-8D38-0157C1646EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6674E6F-0E69-4CCB-8B32-BBAE06D6D8E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6674E6F-0E69-4CCB-8B32-BBAE06D6D8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6674E6F-0E69-4CCB-8B32-BBAE06D6D8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6674E6F-0E69-4CCB-8B32-BBAE06D6D8E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC4D877C-1727-4A1C-89E2-4657BD057491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4D877C-1727-4A1C-89E2-4657BD057491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4D877C-1727-4A1C-89E2-4657BD057491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4D877C-1727-4A1C-89E2-4657BD057491}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
