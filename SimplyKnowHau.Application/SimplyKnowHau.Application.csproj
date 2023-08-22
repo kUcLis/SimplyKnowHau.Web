@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SimplyKnowHau.Domain\SimplyKnowHau.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
