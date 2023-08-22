@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyKnowHau.WebAPI", "SimplyKnowHau.WebAPI.csproj", "{FBB85A11-98CF-4663-92C7-AC410BF552E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimplyKnowHau.WebAPI", "SimplyKnowHau.WebAPI.csproj", "{FBB85A11-98CF-4663-92C7-AC410BF552E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyKnowHau.Application", "..\SimplyKnowHau.Application\SimplyKnowHau.Application.csproj", "{BD08160F-779C-4F5F-8D38-0157C1646EA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimplyKnowHau.Application", "..\SimplyKnowHau.Application\SimplyKnowHau.Application.csproj", "{BD08160F-779C-4F5F-8D38-0157C1646EA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyKnowHau.Domain", "..\SimplyKnowHau.Domain\SimplyKnowHau.Domain.csproj", "{C6674E6F-0E69-4CCB-8B32-BBAE06D6D8E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimplyKnowHau.Domain", "..\SimplyKnowHau.Domain\SimplyKnowHau.Domain.csproj", "{C6674E6F-0E69-4CCB-8B32-BBAE06D6D8E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyKnowHau.Infrastructure", "..\SimplyKnowHau.Infrastructure\SimplyKnowHau.Infrastructure.csproj", "{FC4D877C-1727-4A1C-89E2-4657BD057491}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimplyKnowHau.Infrastructure", "..\SimplyKnowHau.Infrastructure\SimplyKnowHau.Infrastructure.csproj", "{FC4D877C-1727-4A1C-89E2-4657BD057491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyKnowHau.Domain.Tests", "..\SimplyKnowHau.Domain.Tests\SimplyKnowHau.Domain.Tests.csproj", "{032220BF-3517-43F0-8FCC-0951330C14E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{FC4D877C-1727-4A1C-89E2-4657BD057491}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC4D877C-1727-4A1C-89E2-4657BD057491}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC4D877C-1727-4A1C-89E2-4657BD057491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{032220BF-3517-43F0-8FCC-0951330C14E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{032220BF-3517-43F0-8FCC-0951330C14E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{032220BF-3517-43F0-8FCC-0951330C14E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{032220BF-3517-43F0-8FCC-0951330C14E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
