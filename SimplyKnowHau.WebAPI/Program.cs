@@ -1,12 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using SimplyKnowHau.Infrastructure.Extensions;
 using SimplyKnowHau.Infrastructure.Persistence;
+using SimplyKnowHau.Infrastructure.Seeders;
 
 namespace SimplyKnowHau.WebAPI
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,14 @@ namespace SimplyKnowHau.WebAPI
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+
+
+
+            // Scopes
+            var scope = app.Services.CreateScope();
+
+            var roleSeeder = scope.ServiceProvider.GetRequiredService<RoleSeeder>();
+            await roleSeeder.Seed();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
