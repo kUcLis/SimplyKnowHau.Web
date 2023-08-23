@@ -13,6 +13,7 @@ namespace SimplyKnowHau.Infrastructure.Extensions
             services.AddDbContext<SimplyKnowHauDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("SimplyKnowHau")));
 
             services.AddScoped<RoleSeeder>();
+            services.AddScoped<UserSeeder>();
         }
     }
 }

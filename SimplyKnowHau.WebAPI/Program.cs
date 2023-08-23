@@ -33,6 +33,8 @@ namespace SimplyKnowHau.WebAPI
 
             var roleSeeder = scope.ServiceProvider.GetRequiredService<RoleSeeder>();
             await roleSeeder.Seed();
+            var userSeeder = scope.ServiceProvider.GetRequiredService<UserSeeder>();
+            await userSeeder.Seed();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
