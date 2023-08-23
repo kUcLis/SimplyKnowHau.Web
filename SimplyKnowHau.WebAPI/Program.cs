@@ -1,6 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using SimplyKnowHau.Infrastructure.Extensions;
-using SimplyKnowHau.Infrastructure.Persistence;
+using SimplyKnowHau.Application.Extensions;
 using SimplyKnowHau.Infrastructure.Seeders;
 
 namespace SimplyKnowHau.WebAPI
@@ -16,8 +15,11 @@ namespace SimplyKnowHau.WebAPI
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
-            // Infrastructure - DbContext
+            // Infrastructure - DbContext,Seeders
             builder.Services.AddInfrastructure(builder.Configuration);
+
+            //Application - Services
+            builder.Services.AddApplication();
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
