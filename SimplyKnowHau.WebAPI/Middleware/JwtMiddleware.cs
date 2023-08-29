@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using SimplyKnowHau.Application.AppSettings;
+using SimplyKnowHau.Application.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 

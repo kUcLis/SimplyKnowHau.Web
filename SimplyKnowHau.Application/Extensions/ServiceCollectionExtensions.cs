@@ -9,6 +9,7 @@ namespace SimplyKnowHau.Application.Extensions
         public static void AddApplication(this IServiceCollection services)
         {
             services.AddScoped<IPasswordHasher,PasswordHasher>();
+            services.AddScoped<IUserService, UserService>();
         }
     }
 }

@@ -1,10 +1,11 @@
-﻿using SimplyKnowHau.Domain.Entities;
+﻿using SimplyKnowHau.Application.Interfaces;
+using SimplyKnowHau.Domain.Entities;
 using SimplyKnowHau.Domain.Interfaces;
 
 
 namespace SimplyKnowHau.Application.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
 
@@ -13,7 +14,7 @@ namespace SimplyKnowHau.Application.Services
             _userRepository = userRepository;
         }
 
-        public async Task<User> GetById (int id)
+        public async Task<User> GetById(int id)
         {
             return await _userRepository.GetById(id);
         }
