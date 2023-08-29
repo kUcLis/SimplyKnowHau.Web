@@ -1,7 +1,7 @@
 using SimplyKnowHau.Infrastructure.Extensions;
 using SimplyKnowHau.Application.Extensions;
 using SimplyKnowHau.Infrastructure.Seeders;
-using SimplyKnowHau.Application.AppSettings;
+using SimplyKnowHau.Application;
 
 namespace SimplyKnowHau.WebAPI
 {

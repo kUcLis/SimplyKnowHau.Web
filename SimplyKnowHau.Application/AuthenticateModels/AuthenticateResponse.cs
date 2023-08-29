@@ -1,9 +1,4 @@
 ﻿using SimplyKnowHau.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimplyKnowHau.Application.AuthenticateModels
 {
@@ -18,5 +13,18 @@ namespace SimplyKnowHau.Application.AuthenticateModels
         public Role Role { get; set; } = default!;
 
         public string Token { get; set; } = default!;
+
+        public AuthenticateResponse(User user, string token)
+        {
+            UserId = user.UserId;
+
+            Email = user.Email;
+
+            DateOfBirth = user.DateOfBirth;
+
+            Role = user.Role;
+
+            Token = token;
+        }
     }
 }

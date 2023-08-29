@@ -7,6 +7,11 @@ namespace SimplyKnowHau.Domain.Interfaces
     {
         Task<User> Register(User user);
 
+        IQueryable<User> GetAll();
+        Task<List<User>> GetAllWithRoles();
+
+        Task<User> GetByEmail(string email);
+
         Task<User> GetById(int id);
     }
 }
