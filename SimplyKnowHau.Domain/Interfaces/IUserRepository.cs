@@ -10,8 +10,8 @@ namespace SimplyKnowHau.Domain.Interfaces
         IQueryable<User> GetAll();
         Task<List<User>> GetAllWithRoles();
 
-        Task<User> GetByEmail(string email);
+        Task<User?> GetByEmail(string email);
 
-        Task<User> GetById(int id);
+        Task<User?> GetById(int id);
     }
 }

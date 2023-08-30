@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SimplyKnowHau.Application\SimplyKnowHau.Application.csproj" />
     <ProjectReference Include="..\SimplyKnowHau.Infrastructure\SimplyKnowHau.Infrastructure.csproj" />
   </ItemGroup>
