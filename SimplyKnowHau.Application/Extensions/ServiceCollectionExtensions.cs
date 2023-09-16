@@ -4,6 +4,7 @@ using SimplyKnowHau.Application.Mapping;
 using SimplyKnowHau.Application.Queries.AuthenticateUserQuery;
 using SimplyKnowHau.Application.Services;
 using MediatR;
+using SimplyKnowHau.Application.Behaviors;
 
 namespace SimplyKnowHau.Application.Extensions
 {
@@ -14,6 +15,8 @@ namespace SimplyKnowHau.Application.Extensions
             services.AddAutoMapper(typeof(MappingProfile));
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(AuthenticateUserQuery).Assembly));
+            services.AddSingleton(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+
 
             services.AddScoped<IPasswordHasher,PasswordHasher>();
             services.AddScoped<IUserService, UserService>();
