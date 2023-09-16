@@ -8,6 +8,7 @@ namespace SimplyKnowHau.Application.Extensions
     {
         public static void AddApplication(this IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(ServiceCollectionExtensions).Assembly);
             services.AddScoped<IPasswordHasher,PasswordHasher>();
             services.AddScoped<IUserService, UserService>();
         }
