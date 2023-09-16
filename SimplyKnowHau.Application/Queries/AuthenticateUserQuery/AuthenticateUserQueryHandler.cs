@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace SimplyKnowHau.Application.Queries.AuthenticateUserQuery
 {
-    public class AuthenticateUserQueryHandler : IRequestHandler<AuthenticateUserQuery, AuthenticateResponse>
+    public class AuthenticateUserQueryHandler : IRequestHandler<AuthenticateUserQuery, AuthenticateResponse?>
     {
         private readonly IUserRepository _userRepository;
         private readonly IPasswordHasher _passwordHasher;
@@ -27,7 +27,7 @@ namespace SimplyKnowHau.Application.Queries.AuthenticateUserQuery
             _passwordHasher = passwordHasher;
             _appSettings = appSettings.Value;
         }
-        public async Task<AuthenticateResponse> Handle(AuthenticateUserQuery request, CancellationToken cancellationToken)
+        public async Task<AuthenticateResponse?> Handle(AuthenticateUserQuery request, CancellationToken cancellationToken)
         {
             var users = await _userRepository.GetAllWithRoles();
             var user = users.FirstOrDefault(x => x.Email == request.Email && _passwordHasher.Verify(x.PasswordHash, request.Email, request.Password));
