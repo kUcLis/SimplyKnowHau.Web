@@ -1,10 +1,8 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SimplyKnowHau.Application.AuthenticateModels;
 using SimplyKnowHau.Application.Commands.RegisterUserCommand;
+using SimplyKnowHau.Application.Commands.UpdateUserCommand;
 using SimplyKnowHau.Application.DTOs;
-using SimplyKnowHau.Application.Interfaces;
 using SimplyKnowHau.Application.Queries.AuthenticateUserQuery;
 using SimplyKnowHau.Application.Queries.GetAllUsersQuery;
 using SimplyKnowHau.Application.Queries.GetUserByIdQuery;
@@ -58,12 +56,24 @@ namespace SimplyKnowHau.WebAPI.Controllers
 
         [HttpPost]
         [Route("register")]
-        public async Task<IActionResult> RegisterUser([FromBody] UserDTO userDTO)
+        public async Task<IActionResult> RegisterUser([FromBody] UserDTO userDTOToRegister)
         {
-            var registeredUser = await _mediator.Send(new RegisterUserCommand(userDTO));
+            var registeredUser = await _mediator.Send(new RegisterUserCommand(userDTOToRegister));
             if (registeredUser == null)
                 return BadRequest();
             return Ok(registeredUser);
+        }
+
+        [HttpPut]
+        [Route("update")]
+        public async Task<IActionResult> UpdateUser([FromBody] UserDTO userDTOToUpdate)
+        {
+            var updatedUser = await _mediator.Send(new UpdateUserCommand(userDTOToUpdate));
+
+            if (updatedUser == null)
+                return BadRequest();
+
+            return Ok(updatedUser);
         }
     }
 }

@@ -40,5 +40,12 @@ namespace SimplyKnowHau.Infrastructure.Repositories
             await _context.SaveChangesAsync();
             return user;
         }
+
+        public async Task<User> Update(User user)
+        {
+            _context.Update(user);
+            await _context.SaveChangesAsync();
+            return user;
+        }
     }
 }
