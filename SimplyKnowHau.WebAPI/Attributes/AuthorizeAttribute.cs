@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
-using SimplyKnowHau.Infrastructure.DTOs;
+using SimplyKnowHau.Application.DTOs;
 
 namespace SimplyKnowHau.WebAPI.Attributes
 {
