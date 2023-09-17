@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SimplyKnowHau.Application.AuthenticateModels;
+using SimplyKnowHau.Application.Commands.RegisterUserCommand;
 using SimplyKnowHau.Application.Interfaces;
 using SimplyKnowHau.Application.Queries.AuthenticateUserQuery;
 using SimplyKnowHau.Application.Queries.GetUserByIdQuery;
@@ -19,7 +20,7 @@ namespace SimplyKnowHau.WebAPI.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("authenticate")]
+        [HttpGet("authenticate")]
         public async Task<IActionResult> Authenticate([FromBody] AuthenticateUserQuery userQuery)
         {
             var response = await _mediator.Send(userQuery);
@@ -40,6 +41,14 @@ namespace SimplyKnowHau.WebAPI.Controllers
                 return BadRequest();
 
             return Ok(user);
+        }
+
+        [HttpPost]
+        [Route("register")]
+        public async Task<IActionResult> RegisterUser([FromBody] RegisterUserCommand registerUser)
+        {
+            var registeredUser = await _mediator.Send(registerUser);
+            return Ok();
         }
     }
 }
