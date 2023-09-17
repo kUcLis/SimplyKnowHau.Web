@@ -19,7 +19,7 @@ namespace SimplyKnowHau.Application.DTOs
 
         public int RoleId { get; set; }
 
-        public RoleDTO Role { get; set; } = null!;
+        public RoleDTO? Role { get; set; }
 
         public bool EmailConfirm { get; set; } = false;
     }

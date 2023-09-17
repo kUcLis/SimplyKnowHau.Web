@@ -10,5 +10,11 @@ namespace SimplyKnowHau.Application.Commands.RegisterUserCommand
 {
     public class RegisterUserCommand : UserDTO, IRequest<UserDTO>
     {
+        public UserDTO UserDTO { get; }
+
+        public RegisterUserCommand(UserDTO userDTO)
+        {
+            UserDTO = userDTO;
+        }
     }
 }
