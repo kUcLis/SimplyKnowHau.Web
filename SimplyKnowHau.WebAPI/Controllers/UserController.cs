@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SimplyKnowHau.Application.AuthenticateModels;
 using SimplyKnowHau.Application.Interfaces;
+using SimplyKnowHau.Application.Queries.AuthenticateUserQuery;
+using SimplyKnowHau.Application.Queries.GetUserByIdQuery;
 
 namespace SimplyKnowHau.WebAPI.Controllers
 {
@@ -9,22 +12,34 @@ namespace SimplyKnowHau.WebAPI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly IMediator _mediator;
 
-        public UserController(IUserService userService)
+        public UserController(IMediator mediator)
         {
-            _userService = userService;
+            _mediator = mediator;
         }
 
         [HttpPost("authenticate")]
-        public async Task<IActionResult> Authenticate([FromBody] AuthenticateRequest model)
+        public async Task<IActionResult> Authenticate([FromBody] AuthenticateUserQuery userQuery)
         {
-            var response = await _userService.Authenticate(model);
+            var response = await _mediator.Send(userQuery);
 
             if (response == null)
                 return Unauthorized(new { message = "Username or password is incorrect" });
 
             return Ok(response);
+        }
+
+        [HttpGet]
+        [Route("getById/{userId}")]
+        public async Task<IActionResult> GetUserById(int userId)
+        {
+            var user = await _mediator.Send(new GetUserByIdQuery { UserId = userId });
+
+            if(user == null)
+                return BadRequest();
+
+            return Ok(user);
         }
     }
 }
