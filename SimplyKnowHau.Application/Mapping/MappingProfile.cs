@@ -10,6 +10,8 @@ namespace SimplyKnowHau.Application.Mapping
         {
             CreateMap<User, UserDTO>();
             CreateMap<UserDTO, User>();
+            CreateMap<Role, RoleDTO>();
+            CreateMap<RoleDTO, Role>();
         }
     }
 }

@@ -19,7 +19,6 @@ namespace SimplyKnowHau.Application.Extensions
 
 
             services.AddScoped<IPasswordHasher,PasswordHasher>();
-            services.AddScoped<IUserService, UserService>();
         }
     }
 }

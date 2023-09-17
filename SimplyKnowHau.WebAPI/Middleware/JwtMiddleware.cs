@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SimplyKnowHau.Application;
-using SimplyKnowHau.Application.Interfaces;
+using SimplyKnowHau.Domain.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
@@ -18,17 +18,17 @@ namespace SimplyKnowHau.WebAPI.Middleware
             _appSettings = appSettings.Value;
         }
 
-        public async Task Invoke(HttpContext context, IUserService userService)
+        public async Task Invoke(HttpContext context, IUserRepository userRepository)
         {
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
             if (token != null)
-                await attachUserToContext(context, userService, token);
+                await attachUserToContext(context, userRepository, token);
 
             await _next(context);
         }
 
-        private async Task attachUserToContext(HttpContext context, IUserService userService, string token)
+        private async Task attachUserToContext(HttpContext context, IUserRepository userRepository, string token)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace SimplyKnowHau.WebAPI.Middleware
                 var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
                 // attach user to context on successful jwt validation
-                context.Items["User"] = await userService.GetById(userId);
+                context.Items["User"] = await userRepository.GetById(userId);
             }
             catch
             {

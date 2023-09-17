@@ -6,6 +6,11 @@ namespace SimplyKnowHau.Application.Queries.GetUserByIdQuery
 {
     public class GetUserByIdQuery : IRequest<UserDTO>
     {
-        public int UserId { get; set; }
+        public int UserId { get; }
+
+        public GetUserByIdQuery(int userId)
+        {
+           UserId = userId;
+        }
     }
 }
