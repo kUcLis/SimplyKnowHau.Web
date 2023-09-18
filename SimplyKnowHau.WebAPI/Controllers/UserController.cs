@@ -75,5 +75,13 @@ namespace SimplyKnowHau.WebAPI.Controllers
 
             return Ok(updatedUser);
         }
+
+        [HttpDelete]
+        [Route("delete/{userId}")]
+        public async Task<IActionResult> DeleteUser(int userId)
+        {
+
+            return Ok();
+        }
     }
 }
