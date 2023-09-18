@@ -82,7 +82,7 @@ namespace SimplyKnowHau.WebAPI.Controllers
         public async Task<IActionResult> DeleteUser(int userId)
         {
             await _mediator.Send(new DeleteUserCommand(userId));
-            return Ok();
+            return Ok(new {Message = $"User {userId} deleted!"});
         }
     }
 }
