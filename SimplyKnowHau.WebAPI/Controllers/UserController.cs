@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SimplyKnowHau.Application.Commands.DeleteUserCommand;
 using SimplyKnowHau.Application.Commands.RegisterUserCommand;
 using SimplyKnowHau.Application.Commands.UpdateUserCommand;
 using SimplyKnowHau.Application.DTOs;
@@ -80,7 +81,7 @@ namespace SimplyKnowHau.WebAPI.Controllers
         [Route("delete/{userId}")]
         public async Task<IActionResult> DeleteUser(int userId)
         {
-
+            await _mediator.Send(new DeleteUserCommand(userId));
             return Ok();
         }
     }
