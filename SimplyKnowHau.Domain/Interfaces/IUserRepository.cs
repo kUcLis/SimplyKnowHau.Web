@@ -15,5 +15,7 @@ namespace SimplyKnowHau.Domain.Interfaces
         Task<User?> GetById(int id);
 
         Task<User> Update(User user);
+
+        Task Delete(User user);
     }
 }

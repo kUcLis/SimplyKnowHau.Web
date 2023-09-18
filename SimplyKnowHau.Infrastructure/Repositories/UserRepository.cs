@@ -47,5 +47,11 @@ namespace SimplyKnowHau.Infrastructure.Repositories
             await _context.SaveChangesAsync();
             return user;
         }
+
+        public async Task Delete(User user)
+        {
+            _context.Remove(user);
+            await _context.SaveChangesAsync();
+        }
     }
 }
