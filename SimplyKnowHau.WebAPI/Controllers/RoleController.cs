@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SimplyKnowHau.Application.Queries.GetUserByIdQuery;
 
 namespace SimplyKnowHau.WebAPI.Controllers
 {
@@ -12,6 +13,18 @@ namespace SimplyKnowHau.WebAPI.Controllers
         public RoleController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        [HttpGet]
+        [Route("getById/{roleId}")]
+        public async Task<IActionResult> GetUserById(int roleId)
+        {
+            var role = await _mediator.Send(new GetUserByIdQuery(roleId));
+
+            if (role == null)
+                return BadRequest(new { message = $"User {roleId} was not found!" });
+
+            return Ok(role);
         }
     }
 }
