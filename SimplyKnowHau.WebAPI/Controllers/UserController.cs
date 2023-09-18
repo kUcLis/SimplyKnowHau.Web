@@ -40,7 +40,7 @@ namespace SimplyKnowHau.WebAPI.Controllers
             var user = await _mediator.Send(new GetUserByIdQuery (userId));
 
             if(user == null)
-                return BadRequest();
+                return BadRequest(new {message = $"User {userId} was not found!"});
 
             return Ok(user);
         }
