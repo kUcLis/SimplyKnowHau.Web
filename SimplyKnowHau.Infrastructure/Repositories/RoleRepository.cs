@@ -1,33 +1,42 @@
 ﻿using SimplyKnowHau.Domain.Entities;
 using SimplyKnowHau.Domain.Interfaces;
+using SimplyKnowHau.Infrastructure.Persistence;
 
 namespace SimplyKnowHau.Infrastructure.Repositories
 {
     public class RoleRepository : IRoleRepository
     {
-        public Task<Role> Add(Role role)
+        private readonly SimplyKnowHauDbContext _context;
+        public RoleRepository(SimplyKnowHauDbContext context) => _context = context; 
+
+        public async Task<Role> Add(Role role)
         {
-            throw new NotImplementedException();
+            await _context.AddAsync(role);
+            await _context.SaveChangesAsync();
+            return role;
         }
 
-        public Task Delete(Role role)
+        public async Task Delete(Role role)
         {
-            throw new NotImplementedException();
+            _context.Remove(role);
+            await _context.SaveChangesAsync();
         }
 
-        public IQueryable<User> GetAll()
+        public IQueryable<Role> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Roles;
         }
 
-        public Task<Role?> GetById(int id)
+        public async Task<Role?> GetById(int roleId)
         {
-            throw new NotImplementedException();
+            return await _context.Roles.FindAsync(roleId);
         }
 
-        public Task<Role> Update(Role role)
+        public async Task<Role> Update(Role role)
         {
-            throw new NotImplementedException();
+            _context.Update(role);
+            await _context.SaveChangesAsync();
+            return role;
         }
     }
 }

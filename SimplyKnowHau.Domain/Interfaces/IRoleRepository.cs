@@ -11,7 +11,7 @@ namespace SimplyKnowHau.Domain.Interfaces
     {
         Task<Role> Add(Role role);
 
-        IQueryable<User> GetAll();
+        IQueryable<Role> GetAll();
 
         Task<Role?> GetById(int id);
 
