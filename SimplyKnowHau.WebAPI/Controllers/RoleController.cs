@@ -22,7 +22,7 @@ namespace SimplyKnowHau.WebAPI.Controllers
             var role = await _mediator.Send(new GetUserByIdQuery(roleId));
 
             if (role == null)
-                return BadRequest(new { message = $"User {roleId} was not found!" });
+                return BadRequest(new { message = $"Role {roleId} was not found!" });
 
             return Ok(role);
         }
